@@ -10,9 +10,9 @@ const Home: React.FC = () => {
       {/* Full-Screen Hero */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img 
-            src="https://plus.unsplash.com/premium_photo-1661880235004-ff090d1ecf92?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHNoaXBwaW5nJTIwbG9naXN0aWNzfGVufDB8fDB8fHww" 
-            alt="Maritime Hero" 
+          <img
+            src="/images/CargoShip.jpg"
+            alt="Cargo Ship at Sea - Laguz Logistics Maritime Transport"
             className="w-full h-full object-cover scale-105"
           />
           <div className="absolute inset-0 bg-white/30"></div>
