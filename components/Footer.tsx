@@ -1,5 +1,5 @@
 import React from 'react';
-import { Anchor, ArrowUpRight, Phone, MapPin, Mail, Box } from 'lucide-react';
+import { ArrowUpRight, Phone, MapPin, Mail, Box } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SERVICES } from '../constants';
 
@@ -10,12 +10,12 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 xl:grid-cols-12 gap-12 md:gap-16 lg:gap-20 mb-16 md:mb-32">
           {/* Brand Column */}
           <div className="md:col-span-1 lg:col-span-3 xl:col-span-3 space-y-6 md:space-y-10">
-            <Link to="/" className="flex items-center space-x-2 md:space-x-3 group">
-              <Anchor className="w-8 h-8 md:w-10 md:h-10 text-[#ff8c12] group-hover:rotate-12 transition-transform" />
-              <div className="flex flex-col leading-none">
-                <span className="text-2xl md:text-3xl font-black tracking-tighter uppercase font-jakarta">LAGUZ</span>
-                <span className="text-[9px] md:text-[10px] tracking-[0.6em] text-slate-400 font-black uppercase mt-1">LOGISTICS</span>
-              </div>
+            <Link to="/" className="flex items-center group">
+              <img
+                src="/images/logo.png"
+                alt="LAGUZ LOGISTICS"
+                className="h-8 md:h-10 w-auto transition-all duration-300 group-hover:scale-105"
+              />
             </Link>
             <p className="text-slate-500 text-[11px] md:text-xs leading-relaxed italic max-w-sm uppercase tracking-widest leading-loose">
               Strength beyond borders. A leading Ethiopian partner in the global logistics network, specializing in maritime and industrial freight.
