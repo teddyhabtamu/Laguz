@@ -107,8 +107,8 @@ const ChatWidget: React.FC = () => {
                   ? 'bg-slate-900 text-white font-bold italic'
                   : 'bg-white text-slate-600 border border-slate-200'
                 }`}>
-                  <span className={`block opacity-40 mb-1 md:mb-2 text-[7px] md:text-[8px] font-black tracking-widest ${msg.role === 'user' ? 'text-[#ff8c12]' : 'text-slate-400'}`}>
-                    {msg.role === 'user' ? 'USER_INPUT' : 'SYSTEM_REPLY'}
+                  <span className={`block opacity-60 mb-1 md:mb-2 text-[8px] md:text-[9px] font-bold tracking-wide ${msg.role === 'user' ? 'text-[#ff8c12]' : 'text-slate-500'}`}>
+                    {msg.role === 'user' ? 'You' : 'Laguz Assistant'}
                   </span>
                   <div className="text-[11px] md:text-xs leading-relaxed">
                     {msg.role === 'user' ? msg.text : renderFormattedText(msg.text)}
