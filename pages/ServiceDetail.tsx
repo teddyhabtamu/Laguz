@@ -33,7 +33,7 @@ const ServiceDetail: React.FC = () => {
         </div>
 
         <div className="container mx-auto px-6 lg:px-16 relative z-10">
-          <Link to="/services" className="inline-flex items-center space-x-2 text-[9px] md:text-[10px] font-black uppercase tracking-widest text-slate-400 mb-8 md:mb-12 hover:text-cyan-600 transition-colors">
+          <Link to="/services" className="inline-flex items-center space-x-2 text-[9px] md:text-[10px] font-black uppercase tracking-widest text-slate-400 mb-8 md:mb-12 hover:text-[#ff8c12] transition-colors">
             <ChevronLeft className="w-3 h-3 md:w-4 md:h-4" />
             <span>Back to all services</span>
           </Link>
@@ -41,7 +41,7 @@ const ServiceDetail: React.FC = () => {
             <h2 className="text-[#d4a017] font-black uppercase tracking-[0.5em] text-[10px] md:text-[12px] mb-6 md:mb-8 font-jakarta">LOGISTICS MANIFEST</h2>
             <h1 className="text-4xl md:text-6xl lg:text-8xl xl:text-[120px] font-black text-slate-900 leading-[0.85] tracking-tighter uppercase mb-6 md:mb-10 font-jakarta">
               {service.title.split(' ').map((word, i) => (
-                <span key={i} className={i % 2 !== 0 ? 'text-cyan-500 block' : 'block'}>
+                <span key={i} className={i % 2 !== 0 ? 'text-[#ff8c12] block' : 'block'}>
                   {word}
                 </span>
               ))}
@@ -70,11 +70,11 @@ const ServiceDetail: React.FC = () => {
             
             <div className="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
                <div className="p-6 md:p-8 bg-slate-50 border-l-4 border-[#d4a017]">
-                  <ShieldCheck className="w-6 h-6 md:w-8 md:h-8 text-cyan-600 mb-4 md:mb-6" />
+                  <ShieldCheck className="w-6 h-6 md:w-8 md:h-8 text-[#ff8c12] mb-4 md:mb-6" />
                   <h4 className="font-black text-slate-900 uppercase text-xs tracking-widest mb-3 md:mb-4">Compliance</h4>
                   <p className="text-[10px] md:text-[11px] text-slate-400 font-medium leading-relaxed italic">Strict adherence to ISO and maritime safety protocols.</p>
                </div>
-               <div className="p-6 md:p-8 bg-slate-50 border-l-4 border-cyan-500">
+               <div className="p-6 md:p-8 bg-slate-50 border-l-4 border-[#ff8c12]">
                   <Globe className="w-6 h-6 md:w-8 md:h-8 text-[#d4a017] mb-4 md:mb-6" />
                   <h4 className="font-black text-slate-900 uppercase text-xs tracking-widest mb-3 md:mb-4">Network</h4>
                   <p className="text-[10px] md:text-[11px] text-slate-400 font-medium leading-relaxed italic">Connected to 120+ international ports globally.</p>
@@ -95,12 +95,12 @@ const ServiceDetail: React.FC = () => {
                <ul className="space-y-4 md:space-y-6">
                  {['24/7 Digital Tracking', 'End-to-End Asset Control', 'Disaster Recovery Protocols', 'Customized Route Engineering'].map((item, idx) => (
                    <li key={idx} className="flex items-center space-x-3 md:space-x-4 group">
-                     <span className="w-2 h-2 bg-cyan-500 rounded-full group-hover:scale-150 transition-transform"></span>
+                     <span className="w-2 h-2 bg-[#ff8c12] rounded-full group-hover:scale-150 transition-transform"></span>
                      <span className="text-[9px] md:text-[10px] font-black uppercase tracking-widest text-slate-400 group-hover:text-white transition-colors">{item}</span>
                    </li>
                  ))}
                </ul>
-               <Link to="/contact" className="mt-8 md:mt-12 inline-flex items-center space-x-3 md:space-x-4 text-cyan-400 font-black uppercase tracking-widest text-[9px] md:text-[10px] border-b border-cyan-400 pb-2 hover:text-white hover:border-white transition-all">
+               <Link to="/contact" className="mt-8 md:mt-12 inline-flex items-center space-x-3 md:space-x-4 text-[#ff8c12] font-black uppercase tracking-widest text-[9px] md:text-[10px] border-b border-[#ff8c12] pb-2 hover:text-white hover:border-white transition-all">
                  <span>REQUEST MANIFEST</span>
                  <MoveRight className="w-3 h-3 md:w-4 md:h-4" />
                </Link>
@@ -120,7 +120,7 @@ const ServiceDetail: React.FC = () => {
                 <div className="aspect-video overflow-hidden mb-6 bg-slate-200 grayscale group-hover:grayscale-0 transition-all duration-700">
                    <img src={s.image} alt={s.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
                 </div>
-                <h5 className="text-xs font-black uppercase tracking-widest text-slate-900 group-hover:text-cyan-600 transition-colors">{s.title}</h5>
+                <h5 className="text-xs font-black uppercase tracking-widest text-slate-900 group-hover:text-[#ff8c12] transition-colors">{s.title}</h5>
              </Link>
            ))}
         </div>

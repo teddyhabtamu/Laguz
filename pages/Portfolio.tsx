@@ -29,9 +29,9 @@ const Portfolio: React.FC = () => {
         </div>
         <div className="container mx-auto px-6 lg:px-16 relative z-10 pt-16 md:pt-20">
           <div className="max-w-4xl reveal active">
-            <h2 className="text-cyan-600 font-black uppercase tracking-[0.4em] text-[10px] md:text-[11px] block mb-6 md:mb-8 font-jakarta">CAPABILITIES & ASSETS</h2>
+            <h2 className="text-[#ff8c12] font-black uppercase tracking-[0.4em] text-[10px] md:text-[11px] block mb-6 md:mb-8 font-jakarta">CAPABILITIES & ASSETS</h2>
             <h1 className="text-4xl md:text-6xl lg:text-8xl font-black text-slate-900 leading-[0.9] tracking-tighter uppercase mb-6 md:mb-8 font-jakarta">
-              Services <br /><span className="text-cyan-500">Manifest.</span>
+              Services <br /><span className="text-[#ff8c12]">Manifest.</span>
             </h1>
           </div>
         </div>
@@ -54,8 +54,8 @@ const Portfolio: React.FC = () => {
               </div>
               <div className="space-y-6 md:space-y-8">
                 <div className="flex items-center space-x-4 md:space-x-6">
-                  <div className="h-0.5 w-12 md:w-20 bg-cyan-500 group-hover:w-20 md:group-hover:w-32 transition-all duration-700"></div>
-                  <h3 className="text-2xl md:text-4xl font-black text-slate-900 tracking-tighter uppercase italic font-jakarta group-hover:text-cyan-600 transition-colors">
+                  <div className="h-0.5 w-12 md:w-20 bg-[#ff8c12] group-hover:w-20 md:group-hover:w-32 transition-all duration-700"></div>
+                  <h3 className="text-2xl md:text-4xl font-black text-slate-900 tracking-tighter uppercase italic font-jakarta group-hover:text-[#ff8c12] transition-colors">
                     {s.title}
                   </h3>
                 </div>
@@ -64,7 +64,7 @@ const Portfolio: React.FC = () => {
                 </p>
                 <div className="pt-6 md:pt-8 border-t border-slate-100 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
                    <span className="text-[9px] md:text-[10px] font-black uppercase tracking-widest text-slate-400 italic">LOGISTICS SECTOR: MARITIME & FREIGHT</span>
-                   <Link to={`/services/${s.id}`} className="self-start sm:self-auto p-3 md:p-4 bg-slate-900 text-white rounded-full group-hover:bg-cyan-600 transition-all cursor-pointer">
+                   <Link to={`/services/${s.id}`} className="self-start sm:self-auto p-3 md:p-4 bg-slate-900 text-white rounded-full group-hover:bg-[#ff8c12] transition-all cursor-pointer">
                     <MoveRight className="w-5 h-5 md:w-6 md:h-6" />
                    </Link>
                 </div>
@@ -80,15 +80,15 @@ const Portfolio: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-24 items-center">
             <div className="reveal">
                <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-[0.9] mb-8 md:mb-12 font-jakarta">
-                 Specialized <br /><span className="text-cyan-400">Industrial <br />Infrastructure.</span>
+                 Specialized <br /><span className="text-[#ff8c12]">Industrial <br />Infrastructure.</span>
                </h2>
                <p className="text-lg md:text-2xl text-slate-300 italic leading-relaxed mb-8 md:mb-12 font-medium">
                  From heavy-lift energy turbines to multimodal mining equipment logistics across East Africa.
                </p>
                <ul className="space-y-4 md:space-y-6">
                  {['Regional Feasibility Studies', 'Integrated Customs Brokerage', 'Route Risk Mitigation'].map((item, idx) => (
-                   <li key={idx} className="flex items-center space-x-4 md:space-x-6 text-[10px] md:text-[11px] font-black uppercase tracking-widest text-cyan-400">
-                     <span className="w-2 h-2 md:w-3 md:h-3 bg-cyan-400 rounded-full"></span>
+                   <li key={idx} className="flex items-center space-x-4 md:space-x-6 text-[10px] md:text-[11px] font-black uppercase tracking-widest text-[#ff8c12]">
+                     <span className="w-2 h-2 md:w-3 md:h-3 bg-[#ff8c12] rounded-full"></span>
                      <span>{item}</span>
                    </li>
                  ))}

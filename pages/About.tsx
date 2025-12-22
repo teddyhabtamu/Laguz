@@ -17,9 +17,9 @@ const About: React.FC = () => {
         </div>
         <div className="container mx-auto px-6 lg:px-16 relative z-10 pt-16 md:pt-20">
           <div className="max-w-4xl reveal active">
-            <span className="text-cyan-600 font-black uppercase tracking-[0.4em] text-[10px] md:text-[11px] block mb-6 md:mb-8">IDENTITY & VISION</span>
+            <span className="text-[#ff8c12] font-black uppercase tracking-[0.4em] text-[10px] md:text-[11px] block mb-6 md:mb-8">IDENTITY & VISION</span>
             <h1 className="text-4xl md:text-6xl lg:text-8xl font-black text-slate-900 leading-[0.9] tracking-tighter uppercase mb-6 md:mb-10 font-jakarta">
-              Pioneering <br />Ethical <span className="text-cyan-500">Flow.</span>
+              Pioneering <br />Ethical <span className="text-[#ff8c12]">Flow.</span>
             </h1>
           </div>
         </div>
@@ -55,7 +55,7 @@ const About: React.FC = () => {
         <div className="container mx-auto px-6 lg:px-16">
           <div className="max-w-4xl mx-auto text-center reveal mb-12 md:mb-16">
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-slate-900 tracking-tighter uppercase mb-8 md:mb-10 font-jakarta">How We Work</h2>
-            <div className="w-12 h-1 md:w-16 bg-cyan-400 mx-auto"></div>
+            <div className="w-12 h-1 md:w-16 bg-[#ff8c12] mx-auto"></div>
           </div>
           <div className="max-w-4xl mx-auto reveal">
             <p className="text-lg md:text-xl text-slate-700 leading-relaxed font-bold italic mb-6 md:mb-8 text-center">

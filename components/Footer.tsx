@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
           {/* Brand Column */}
           <div className="md:col-span-1 lg:col-span-3 xl:col-span-3 space-y-6 md:space-y-10">
             <Link to="/" className="flex items-center space-x-2 md:space-x-3 group">
-              <Anchor className="w-8 h-8 md:w-10 md:h-10 text-cyan-600 group-hover:rotate-12 transition-transform" />
+              <Anchor className="w-8 h-8 md:w-10 md:h-10 text-[#ff8c12] group-hover:rotate-12 transition-transform" />
               <div className="flex flex-col leading-none">
                 <span className="text-2xl md:text-3xl font-black tracking-tighter uppercase font-jakarta">LAGUZ</span>
                 <span className="text-[9px] md:text-[10px] tracking-[0.6em] text-slate-400 font-black uppercase mt-1">LOGISTICS</span>
@@ -24,12 +24,12 @@ const Footer: React.FC = () => {
 
           {/* Corporate Links */}
           <div className="md:col-span-1 lg:col-span-2 space-y-6 md:space-y-8">
-            <h4 className="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.4em] text-cyan-600 font-jakarta">Corporate</h4>
+            <h4 className="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.4em] text-[#ff8c12] font-jakarta">Corporate</h4>
             <ul className="space-y-3 md:space-y-4">
               <li>
                 <Link
                   to="/about"
-                  className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 hover:text-cyan-600 transition-colors"
+                  className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 hover:text-[#ff8c12] transition-colors"
                 >
                   About Us
                 </Link>
@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
               <li>
                 <Link
                   to="/services"
-                  className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 hover:text-cyan-600 transition-colors"
+                  className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 hover:text-[#ff8c12] transition-colors"
                 >
                   Services
                 </Link>
@@ -45,7 +45,7 @@ const Footer: React.FC = () => {
               <li>
                 <Link
                   to="/why-laguz"
-                  className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 hover:text-cyan-600 transition-colors"
+                  className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 hover:text-[#ff8c12] transition-colors"
                 >
                   Why Laguz
                 </Link>
@@ -53,7 +53,7 @@ const Footer: React.FC = () => {
               <li>
                 <Link
                   to="/careers"
-                  className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 hover:text-cyan-600 transition-colors"
+                  className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 hover:text-[#ff8c12] transition-colors"
                 >
                   Careers
                 </Link>
@@ -61,7 +61,7 @@ const Footer: React.FC = () => {
               <li>
                 <Link
                   to="/contact"
-                  className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 hover:text-cyan-600 transition-colors"
+                  className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 hover:text-[#ff8c12] transition-colors"
                 >
                   Contact
                 </Link>
@@ -71,13 +71,13 @@ const Footer: React.FC = () => {
 
           {/* Services Links */}
           <div className="md:col-span-1 lg:col-span-2 xl:col-span-2 space-y-6 md:space-y-8">
-            <h4 className="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.4em] text-cyan-600 font-jakarta">Services</h4>
+            <h4 className="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.4em] text-[#ff8c12] font-jakarta">Services</h4>
             <ul className="space-y-3 md:space-y-4">
               {SERVICES.slice(0, 5).map((service) => (
                 <li key={service.id}>
                   <Link
                     to={`/services/${service.id}`}
-                    className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 hover:text-cyan-600 transition-colors"
+                    className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 hover:text-[#ff8c12] transition-colors"
                   >
                     {service.title}
                   </Link>
@@ -88,23 +88,23 @@ const Footer: React.FC = () => {
 
           {/* Contact Details Column - As Requested */}
           <div className="md:col-span-2 lg:col-span-2 xl:col-span-2 space-y-6 md:space-y-8">
-            <h4 className="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.4em] text-cyan-600 font-jakarta italic">Regional Hub</h4>
+            <h4 className="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.4em] text-[#ff8c12] font-jakarta italic">Regional Hub</h4>
             <div className="space-y-4 md:space-y-6">
               <div className="flex items-start space-x-3 group">
-                <MapPin className="w-4 h-4 text-slate-300 mt-0.5 group-hover:text-cyan-600 transition-colors flex-shrink-0" />
+                <MapPin className="w-4 h-4 text-slate-300 mt-0.5 group-hover:text-[#ff8c12] transition-colors flex-shrink-0" />
                 <p className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-slate-500 leading-relaxed italic">
                   Bole Road, Flamingo, Tommy Tower,<br />
                   4th Floor, Room № 402
                 </p>
               </div>
               <div className="flex items-start space-x-3 group">
-                <Box className="w-4 h-4 text-slate-300 mt-0.5 group-hover:text-cyan-600 transition-colors flex-shrink-0" />
+                <Box className="w-4 h-4 text-slate-300 mt-0.5 group-hover:text-[#ff8c12] transition-colors flex-shrink-0" />
                 <p className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-slate-500 italic">
                   P.O.Box: 26609 Addis Ababa, Ethiopia.
                 </p>
               </div>
               <div className="flex items-start space-x-3 group">
-                <Phone className="w-4 h-4 text-slate-300 mt-0.5 group-hover:text-cyan-600 transition-colors flex-shrink-0" />
+                <Phone className="w-4 h-4 text-slate-300 mt-0.5 group-hover:text-[#ff8c12] transition-colors flex-shrink-0" />
                 <div className="space-y-2">
                   <p className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-slate-500 italic">
                     Mobile: +251 920 808080<br />
@@ -121,14 +121,14 @@ const Footer: React.FC = () => {
 
           {/* Newsletter / Uplink */}
           <div className="md:col-span-2 lg:col-span-2 xl:col-span-3 space-y-6 md:space-y-8">
-            <h4 className="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.4em] text-cyan-600 font-jakarta">Uplink</h4>
+            <h4 className="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.4em] text-[#ff8c12] font-jakarta">Uplink</h4>
             <form className="relative" onSubmit={e => e.preventDefault()}>
               <input
                 type="email"
                 placeholder="STAKEHOLDER@MAIL"
-                className="w-full bg-slate-50 border-b border-slate-200 py-3 md:py-4 px-2 text-[9px] md:text-[10px] font-bold uppercase tracking-widest focus:border-cyan-600 outline-none transition-all placeholder:text-slate-300"
+                className="w-full bg-slate-50 border-b border-slate-200 py-3 md:py-4 px-2 text-[9px] md:text-[10px] font-bold uppercase tracking-widest focus:border-[#ff8c12] outline-none transition-all placeholder:text-slate-300"
               />
-              <button className="absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 hover:text-cyan-600 transition-colors">
+              <button className="absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 hover:text-[#ff8c12] transition-colors">
                 <ArrowUpRight size={16} className="md:w-5 md:h-5" />
               </button>
             </form>
@@ -144,14 +144,14 @@ const Footer: React.FC = () => {
           <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-12 mt-6 md:mt-0">
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="hover:text-cyan-600 transition-colors cursor-pointer text-[9px] md:text-[10px]"
+              className="hover:text-[#ff8c12] transition-colors cursor-pointer text-[9px] md:text-[10px]"
             >
               Back to Top ↑
             </button>
             <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-8">
-              <a href="#" className="hover:text-cyan-600 transition-colors">Safety Protocol</a>
-              <a href="#" className="hover:text-cyan-600 transition-colors">Legal Manifest</a>
-              <a href="#" className="hover:text-cyan-600 transition-colors">Privacy</a>
+              <a href="#" className="hover:text-[#ff8c12] transition-colors">Safety Protocol</a>
+              <a href="#" className="hover:text-[#ff8c12] transition-colors">Legal Manifest</a>
+              <a href="#" className="hover:text-[#ff8c12] transition-colors">Privacy</a>
             </div>
           </div>
         </div>

@@ -47,7 +47,7 @@ const ChatWidget: React.FC = () => {
       if (currentLine.startsWith('###')) {
         const headerText = currentLine.replace(/^###\s*/, '');
         return (
-          <h4 key={i} className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] text-cyan-600 mt-4 md:mt-6 mb-2 md:mb-3 border-b border-slate-100 pb-1 italic font-jakarta">
+          <h4 key={i} className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] text-[#ff8c12] mt-4 md:mt-6 mb-2 md:mb-3 border-b border-slate-100 pb-1 italic font-jakarta">
             {headerText}
           </h4>
         );
@@ -77,7 +77,7 @@ const ChatWidget: React.FC = () => {
       if (isBullet) {
         return (
           <div key={i} className="flex items-start space-x-1.5 md:space-x-2 my-1 md:my-1.5 pl-0.5 md:pl-1">
-            <span className="text-cyan-500 mt-0.5 md:mt-1 flex-shrink-0 text-sm">•</span>
+            <span className="text-[#ff8c12] mt-0.5 md:mt-1 flex-shrink-0 text-sm">•</span>
             <span className="flex-1 leading-relaxed text-[10px] md:text-xs">{content}</span>
           </div>
         );
@@ -90,13 +90,13 @@ const ChatWidget: React.FC = () => {
   return (
     <div className="fixed bottom-4 right-4 md:bottom-10 md:right-10 z-[70]">
       {isOpen ? (
-        <div className="bg-white border border-slate-100 shadow-2xl w-[calc(100vw-2rem)] max-w-[380px] md:w-[380px] h-[calc(100vh-8rem)] md:h-[450px] overflow-hidden flex flex-col animate-in slide-in-from-bottom-8 duration-500 teal-glow">
+        <div className="bg-white border border-slate-100 shadow-2xl w-[calc(100vw-2rem)] max-w-[380px] md:w-[380px] h-[calc(100vh-8rem)] md:h-[450px] overflow-hidden flex flex-col animate-in slide-in-from-bottom-8 duration-500 shadow-2xl">
           <div className="bg-slate-900 p-4 md:p-5 flex justify-between items-center text-white">
             <div className="flex items-center space-x-2 md:space-x-3">
-              <Cpu className="w-4 h-4 md:w-5 md:h-5 text-teal-400" />
+              <Cpu className="w-4 h-4 md:w-5 md:h-5 text-[#ff8c12]" />
               <span className="font-black uppercase tracking-[0.3em] text-[9px] md:text-[10px] italic font-jakarta">Laguz Assistant V.3</span>
             </div>
-            <button onClick={() => setIsOpen(false)} className="p-1"><X className="w-5 h-5 hover:text-teal-400 transition-colors" /></button>
+            <button onClick={() => setIsOpen(false)} className="p-1"><X className="w-5 h-5 hover:text-[#ff8c12] transition-colors" /></button>
           </div>
 
           <div ref={scrollRef} className="flex-1 overflow-y-auto p-4 md:p-8 space-y-3 md:space-y-4 bg-slate-50/50 font-sans text-[10px] md:text-[11px]">
@@ -107,7 +107,7 @@ const ChatWidget: React.FC = () => {
                   ? 'bg-slate-900 text-white font-bold italic'
                   : 'bg-white text-slate-600 border border-slate-200'
                 }`}>
-                  <span className={`block opacity-40 mb-1 md:mb-2 text-[7px] md:text-[8px] font-black tracking-widest ${msg.role === 'user' ? 'text-teal-400' : 'text-slate-400'}`}>
+                  <span className={`block opacity-40 mb-1 md:mb-2 text-[7px] md:text-[8px] font-black tracking-widest ${msg.role === 'user' ? 'text-[#ff8c12]' : 'text-slate-400'}`}>
                     {msg.role === 'user' ? 'USER_INPUT' : 'SYSTEM_REPLY'}
                   </span>
                   <div className="text-[11px] md:text-xs leading-relaxed">
@@ -118,7 +118,7 @@ const ChatWidget: React.FC = () => {
             ))}
             {isLoading && (
               <div className="flex justify-start">
-                <div className="text-teal-600 flex items-center space-x-2 animate-pulse">
+                <div className="text-[#ff8c12] flex items-center space-x-2 animate-pulse">
                   <Loader2 className="w-3 h-3 animate-spin" />
                   <span className="uppercase tracking-widest text-[7px] md:text-[8px] font-black">Syncing Satellite Data...</span>
                 </div>
@@ -133,12 +133,12 @@ const ChatWidget: React.FC = () => {
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleSend()}
               placeholder="Inquire status..."
-              className="flex-1 bg-slate-50 border-none px-4 md:px-5 py-3 md:py-4 text-[11px] md:text-[10px] font-bold uppercase tracking-[0.3em] focus:ring-1 focus:ring-teal-500 outline-none"
+              className="flex-1 bg-slate-50 border-none px-4 md:px-5 py-3 md:py-4 text-[11px] md:text-[10px] font-bold uppercase tracking-[0.3em] focus:ring-1 focus:ring-[#ff8c12] outline-none"
             />
             <button
               onClick={handleSend}
               disabled={isLoading}
-              className="bg-slate-900 text-white p-3 md:p-4 hover:bg-teal-500 transition-all disabled:opacity-20 shadow-lg rounded-sm touch-manipulation"
+              className="bg-slate-900 text-white p-3 md:p-4 hover:bg-[#ff8c12] transition-all disabled:opacity-20 shadow-lg rounded-sm touch-manipulation"
             >
               <Send className="w-4 h-4 md:w-4 md:h-4" />
             </button>
@@ -147,7 +147,7 @@ const ChatWidget: React.FC = () => {
       ) : (
         <button
           onClick={() => setIsOpen(true)}
-          className="bg-slate-900 text-teal-400 px-4 py-3 md:px-8 md:py-5 shadow-2xl hover:bg-teal-500 hover:text-white transition-all flex items-center space-x-2 md:space-x-4 group rounded-full teal-glow touch-manipulation"
+          className="bg-slate-900 text-[#ff8c12] px-4 py-3 md:px-8 md:py-5 shadow-2xl hover:bg-[#ff8c12] hover:text-white transition-all flex items-center space-x-2 md:space-x-4 group rounded-full shadow-2xl touch-manipulation"
         >
           <span className="font-bold uppercase tracking-[0.4em] text-[9px] md:text-[10px] italic font-jakarta">Laguz Intelligence</span>
           <MessageSquare className="w-4 h-4 md:w-5 md:h-5" />

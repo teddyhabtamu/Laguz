@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Anchor, MoveRight, ChevronDown } from 'lucide-react';
+import { Menu, X, MoveRight, ChevronDown } from 'lucide-react';
 import { SERVICES } from '../constants';
 
 const Navbar: React.FC = () => {
@@ -63,20 +63,18 @@ const Navbar: React.FC = () => {
   ];
 
   const themeColor = 'text-slate-900';
-  const accentColor = 'text-cyan-600';
+  const accentColor = 'text-[#ff8c12]';
   const yellowAccent = 'text-[#0000]'; // Refined gold for white background readability
 
   return (
     <nav className={`fixed top-0 left-0 w-full z-[80] transition-all duration-500 ${scrolled ? 'nav-glass py-4 shadow-sm' : 'bg-transparent py-8'}`}>
       <div className="container mx-auto px-6 lg:px-12 flex justify-between items-center">
-        <Link to="/" className="flex items-center space-x-3 group">
-          <div className={`transition-all duration-300 ${accentColor} group-hover:rotate-12`}>
-            <Anchor className="w-8 h-8 md:w-10 md:h-10" />
-          </div>
-          <div className="flex flex-col leading-none">
-            <span className={`text-xl md:text-2xl font-black tracking-tighter uppercase font-jakarta ${themeColor}`}>LAGUZ</span>
-            <span className={`text-[8px] md:text-[9px] tracking-[0.6em] font-black uppercase text-slate-400`}>LOGISTICS</span>
-          </div>
+        <Link to="/" className="flex items-center group">
+          <img
+            src="/images/logo.png"
+            alt="LAGUZ LOGISTICS"
+            className="h-10 md:h-12 w-auto transition-all duration-300 group-hover:scale-105"
+          />
         </Link>
 
         {/* Desktop Links */}
@@ -85,8 +83,8 @@ const Navbar: React.FC = () => {
             <Link
               key={link.name}
               to={link.path}
-              className={`text-[10px] font-black tracking-[0.2em] transition-all hover:text-cyan-600 font-jakarta ${
-                location.pathname === link.path ? 'text-cyan-600' : themeColor
+              className={`text-[10px] font-black tracking-[0.2em] transition-all hover:text-[#ff8c12] font-jakarta ${
+                location.pathname === link.path ? 'text-[#ff8c12]' : themeColor
               }`}
             >
               {link.name}
@@ -98,8 +96,8 @@ const Navbar: React.FC = () => {
             <button 
               onMouseEnter={() => setIsDropdownOpen(true)}
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className={`flex items-center space-x-2 text-[10px] font-black tracking-[0.2em] transition-all hover:text-cyan-600 font-jakarta ${
-                location.pathname.startsWith('/services') ? 'text-cyan-600' : themeColor
+              className={`flex items-center space-x-2 text-[10px] font-black tracking-[0.2em] transition-all hover:text-[#ff8c12] font-jakarta ${
+                location.pathname.startsWith('/services') ? 'text-[#ff8c12]' : themeColor
               }`}
             >
               <span>SERVICES</span>
@@ -116,7 +114,7 @@ const Navbar: React.FC = () => {
                     key={s.id}
                     to={`/services/${s.id}`}
                     onClick={() => setIsDropdownOpen(false)}
-                    className="block px-8 py-3.5 text-[10px] font-black uppercase tracking-widest text-black hover:bg-slate-50 hover:pl-10 transition-all border-l-2 border-transparent hover:border-cyan-500"
+                    className="block px-8 py-3.5 text-[10px] font-black uppercase tracking-widest text-black hover:bg-slate-50 hover:pl-10 transition-all border-l-2 border-transparent hover:border-[#ff8c12]"
                   >
                     {s.title}
                   </Link>
@@ -128,8 +126,8 @@ const Navbar: React.FC = () => {
           <Link
             key="CAREERS"
             to="/careers"
-            className={`text-[10px] font-black tracking-[0.2em] transition-all hover:text-cyan-600 font-jakarta ${
-              location.pathname === '/careers' ? 'text-cyan-600' : themeColor
+            className={`text-[10px] font-black tracking-[0.2em] transition-all hover:text-[#ff8c12] font-jakarta ${
+              location.pathname === '/careers' ? 'text-[#ff8c12]' : themeColor
             }`}
           >
             CAREERS
@@ -137,7 +135,7 @@ const Navbar: React.FC = () => {
 
           <Link
             to="/contact"
-            className="group flex items-center space-x-3 bg-slate-900 text-white px-8 py-3.5 text-[10px] font-black tracking-widest transition-all rounded-sm hover:bg-cyan-600 shadow-xl shadow-slate-200"
+            className="group flex items-center space-x-3 bg-slate-900 text-white px-8 py-3.5 text-[10px] font-black tracking-widest transition-all rounded-sm hover:bg-[#ff8c12] shadow-xl shadow-slate-200"
           >
             <span>CONTACT US</span>
             <MoveRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -159,7 +157,7 @@ const Navbar: React.FC = () => {
               key={link.name}
               to={link.path}
               onClick={() => setIsOpen(false)}
-              className="text-2xl font-black tracking-tighter text-slate-900 hover:text-cyan-600 font-jakarta"
+              className="text-2xl font-black tracking-tighter text-slate-900 hover:text-[#ff8c12] font-jakarta"
             >
               {link.name}
             </Link>
@@ -172,7 +170,7 @@ const Navbar: React.FC = () => {
                   key={s.id}
                   to={`/services/${s.id}`}
                   onClick={() => setIsOpen(false)}
-                  className="text-lg font-bold text-[#d4a017] hover:text-cyan-600 uppercase font-jakarta tracking-widest"
+                  className="text-lg font-bold text-[#d4a017] hover:text-[#ff8c12] uppercase font-jakarta tracking-widest"
                 >
                   {s.title}
                 </Link>
@@ -182,14 +180,14 @@ const Navbar: React.FC = () => {
           <Link
             to="/careers"
             onClick={() => setIsOpen(false)}
-            className="text-2xl font-black tracking-tighter text-slate-900 hover:text-cyan-600 font-jakarta"
+            className="text-2xl font-black tracking-tighter text-slate-900 hover:text-[#ff8c12] font-jakarta"
           >
             CAREERS
           </Link>
           <Link
             to="/contact"
             onClick={() => setIsOpen(false)}
-            className="text-2xl font-black tracking-tighter text-cyan-600 font-jakarta pt-8"
+            className="text-2xl font-black tracking-tighter text-[#ff8c12] font-jakarta pt-8"
           >
             CONTACT US
           </Link>

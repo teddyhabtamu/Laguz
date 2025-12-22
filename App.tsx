@@ -22,7 +22,7 @@ const ScrollToTop = () => {
 // Simple Careers Placeholder
 const Careers = () => (
   <div className="min-h-screen bg-white pt-60 container mx-auto px-6 lg:px-16">
-    <h1 className="text-7xl font-black text-slate-900 uppercase tracking-tighter mb-10 font-jakarta">Join the <br /><span className="text-cyan-500">Manifest.</span></h1>
+    <h1 className="text-7xl font-black text-slate-900 uppercase tracking-tighter mb-10 font-jakarta">Join the <br /><span className="text-[#ff8c12]">Manifest.</span></h1>
     <p className="text-xl text-slate-500 italic leading-relaxed max-w-2xl">We are always looking for maritime experts and logistical engineers to join our growing hub in Addis Ababa.</p>
     <div className="mt-20 p-10 bg-slate-50 border border-slate-100">
       <p className="text-[10px] font-black uppercase tracking-widest text-slate-400">Current Status</p>
@@ -35,8 +35,8 @@ const Careers = () => (
 const WhyLaguz = () => (
   <div className="min-h-screen bg-white pt-60 pb-40 container mx-auto px-6 lg:px-16">
     <div className="reveal active">
-      <span className="text-cyan-600 font-black uppercase tracking-widest text-[10px] block mb-6">WHY LAGUZ</span>
-      <h1 className="text-6xl md:text-8xl font-black text-slate-900 uppercase tracking-tighter mb-20 font-jakarta">Reliability in <br /><span className="text-cyan-500">Every Manifest.</span></h1>
+      <span className="text-[#ff8c12] font-black uppercase tracking-widest text-[10px] block mb-6">WHY LAGUZ</span>
+      <h1 className="text-6xl md:text-8xl font-black text-slate-900 uppercase tracking-tighter mb-20 font-jakarta">Reliability in <br /><span className="text-[#ff8c12]">Every Manifest.</span></h1>
     </div>
     
     <div className="grid lg:grid-cols-2 gap-24 items-start">
@@ -49,7 +49,7 @@ const WhyLaguz = () => (
         <div className="space-y-10">
           {HIGHLIGHTS.map((h, i) => (
             <div key={i} className="flex items-start space-x-6">
-              <div className="p-4 bg-slate-50 shadow-sm rounded-full text-cyan-500">
+              <div className="p-4 bg-slate-50 shadow-sm rounded-full text-[#ff8c12]">
                 <h.icon className="w-6 h-6" />
               </div>
               <div>
@@ -81,7 +81,7 @@ const WhyLaguz = () => (
 const App: React.FC = () => {
   return (
     <Router>
-      <div className="min-h-screen flex flex-col font-sans selection:bg-cyan-100 selection:text-cyan-900">
+      <div className="min-h-screen flex flex-col font-sans selection:bg-[#ff8c12]/20 selection:text-slate-900">
         <ScrollToTop />
         <Navbar />
         <main className="flex-grow">
