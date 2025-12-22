@@ -1,0 +1,8 @@
+{
+  "name": "Laguz Logistics",
+  "description": "A modern, maritime-focused logistics platform with high-tech cargo verification and global shipping solutions.",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ]
+}
