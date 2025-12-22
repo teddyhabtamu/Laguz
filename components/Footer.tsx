@@ -1,14 +1,15 @@
 import React from 'react';
 import { Anchor, ArrowUpRight, Phone, MapPin, Mail, Box } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { SERVICES } from '../constants';
 
 const Footer: React.FC = () => {
   return (
     <footer className="bg-white text-slate-900 pt-32 pb-12 border-t border-slate-100">
       <div className="container mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-12 gap-20 mb-32">
+        <div className="grid lg:grid-cols-12 xl:grid-cols-12 gap-20 mb-32">
           {/* Brand Column */}
-          <div className="lg:col-span-4 space-y-10">
+          <div className="lg:col-span-3 xl:col-span-3 space-y-10">
             <Link to="/" className="flex items-center space-x-3 group">
               <Anchor className="w-10 h-10 text-cyan-600 group-hover:rotate-12 transition-transform" />
               <div className="flex flex-col leading-none">
@@ -25,13 +26,60 @@ const Footer: React.FC = () => {
           <div className="lg:col-span-2 space-y-8">
             <h4 className="text-[11px] font-bold uppercase tracking-[0.4em] text-cyan-600 font-jakarta">Corporate</h4>
             <ul className="space-y-4">
-              {['About Us', 'Services', 'Why Laguz', 'Careers'].map((item) => (
-                <li key={item}>
-                  <Link 
-                    to={`/${item.toLowerCase().replace(' ', '-')}`} 
+              <li>
+                <Link
+                  to="/about"
+                  className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 hover:text-cyan-600 transition-colors"
+                >
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/services"
+                  className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 hover:text-cyan-600 transition-colors"
+                >
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/why-laguz"
+                  className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 hover:text-cyan-600 transition-colors"
+                >
+                  Why Laguz
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/careers"
+                  className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 hover:text-cyan-600 transition-colors"
+                >
+                  Careers
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/contact"
+                  className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 hover:text-cyan-600 transition-colors"
+                >
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Services Links */}
+          <div className="lg:col-span-2 xl:col-span-2 space-y-8">
+            <h4 className="text-[11px] font-bold uppercase tracking-[0.4em] text-cyan-600 font-jakarta">Services</h4>
+            <ul className="space-y-4">
+              {SERVICES.slice(0, 5).map((service) => (
+                <li key={service.id}>
+                  <Link
+                    to={`/services/${service.id}`}
                     className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 hover:text-cyan-600 transition-colors"
                   >
-                    {item}
+                    {service.title}
                   </Link>
                 </li>
               ))}
@@ -39,7 +87,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Contact Details Column - As Requested */}
-          <div className="lg:col-span-3 space-y-8">
+          <div className="lg:col-span-2 xl:col-span-2 space-y-8">
             <h4 className="text-[11px] font-bold uppercase tracking-[0.4em] text-cyan-600 font-jakarta italic">Regional Hub</h4>
             <div className="space-y-6">
               <div className="flex items-start space-x-3 group">
@@ -72,7 +120,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Newsletter / Uplink */}
-          <div className="lg:col-span-3 space-y-8">
+          <div className="lg:col-span-2 xl:col-span-3 space-y-8">
             <h4 className="text-[11px] font-bold uppercase tracking-[0.4em] text-cyan-600 font-jakarta">Uplink</h4>
             <form className="relative" onSubmit={e => e.preventDefault()}>
               <input 
@@ -93,10 +141,18 @@ const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="pt-12 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center text-[9px] font-bold uppercase tracking-[0.5em] text-slate-400">
           <p>© {new Date().getFullYear()} LAGUZ LOGISTICS // ETHIOPIAN MARITIME PARTNER</p>
-          <div className="flex space-x-12 mt-6 md:mt-0">
-             <a href="#" className="hover:text-cyan-600 transition-colors">Safety Protocol</a>
-             <a href="#" className="hover:text-cyan-600 transition-colors">Legal Manifest</a>
-             <a href="#" className="hover:text-cyan-600 transition-colors">Privacy</a>
+          <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-12 mt-6 md:mt-0">
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="hover:text-cyan-600 transition-colors cursor-pointer"
+            >
+              Back to Top ↑
+            </button>
+            <div className="flex space-x-12">
+              <a href="#" className="hover:text-cyan-600 transition-colors">Safety Protocol</a>
+              <a href="#" className="hover:text-cyan-600 transition-colors">Legal Manifest</a>
+              <a href="#" className="hover:text-cyan-600 transition-colors">Privacy</a>
+            </div>
           </div>
         </div>
       </div>

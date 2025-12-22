@@ -27,6 +27,35 @@ const Navbar: React.FC = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      // Prevent scrolling on body
+      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+      document.body.style.top = `-${window.scrollY}px`;
+    } else {
+      // Restore scrolling and scroll position
+      const scrollY = document.body.style.top;
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.top = '';
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
+      }
+    }
+
+    // Cleanup function
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.top = '';
+    };
+  }, [isOpen]);
+
   const navLinks = [
     { name: 'HOME', path: '/' },
     { name: 'WHY LAGUZ', path: '/why-laguz' },
@@ -123,7 +152,7 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="fixed inset-0 bg-white z-[60] flex flex-col justify-start items-center space-y-8 animate-in fade-in duration-300 overflow-y-auto pt-24 pb-12">
+        <div className="fixed inset-0 bg-white/95 backdrop-blur-sm z-[100] flex flex-col justify-start items-center space-y-8 animate-in fade-in duration-300 overflow-y-auto pt-24 pb-12">
           <button onClick={() => setIsOpen(false)} className="absolute top-8 right-8 text-slate-900"><X size={32} /></button>
           {navLinks.map((link) => (
             <Link

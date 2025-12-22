@@ -11,7 +11,7 @@ const Home: React.FC = () => {
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://plus.unsplash.com/premium_photo-1661963559074-9655a9404f1a?q=80&w=3928&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dhttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvVeluKUwgVxnTwFpF9b1IcPnmPXuP4kwSRp0_WgG_9g&s" 
+            src="https://plus.unsplash.com/premium_photo-1661880235004-ff090d1ecf92?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHNoaXBwaW5nJTIwbG9naXN0aWNzfGVufDB8fDB8fHww" 
             alt="Maritime Hero" 
             className="w-full h-full object-cover scale-105"
           />
