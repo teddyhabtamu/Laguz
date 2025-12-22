@@ -1,7 +1,28 @@
-import React from 'react';
-import { Mail, Phone, MapPin, MoveRight, Clock, Anchor } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Mail, Phone, MapPin, MoveRight, Clock, Anchor, ChevronDown } from 'lucide-react';
 
 const Contact: React.FC = () => {
+  const [selectedService, setSelectedService] = useState('Ocean Freight');
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const serviceOptions = [
+    'Ocean Freight',
+    'Customs Clearance',
+    'Heavy Project Logistics',
+    'Warehousing'
+  ];
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   return (
     <div className="bg-white">
       {/* Hero */}
@@ -35,7 +56,7 @@ const Contact: React.FC = () => {
                   <div>
                     <h5 className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.4em] text-slate-400 mb-2 md:mb-4 italic">Addis Ababa, Ethiopia</h5>
                     <p className="text-lg md:text-xl font-bold text-slate-900 italic leading-relaxed uppercase font-jakarta">
-                      Bole Road, Flamingo,<br />Tommy Tower, 4th Floor,<br />Room № 402.
+                      Bole Road, African Ave,<br />Dembel City Center, New Building,<br />4th Floor, Office FF-001.
                     </p>
                   </div>
                 </div>
@@ -80,14 +101,32 @@ const Contact: React.FC = () => {
                          <input type="email" className="bg-transparent w-full outline-none font-bold italic text-slate-900 uppercase font-jakarta text-sm md:text-base" placeholder="Email@Corporate.com" />
                       </div>
                    </div>
-                   <div className="border-b border-slate-300 pb-3 md:pb-4 focus-within:border-[#ff8c12] transition-colors">
+                   <div ref={dropdownRef} className="border-b border-slate-300 pb-3 md:pb-4 focus-within:border-[#ff8c12] transition-colors relative">
                       <label className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 block mb-2 md:mb-3">Service Sector</label>
-                      <select className="bg-transparent w-full outline-none font-bold italic text-slate-900 uppercase appearance-none cursor-pointer font-jakarta text-sm md:text-base">
-                        <option>Ocean Freight</option>
-                        <option>Customs Clearance</option>
-                        <option>Heavy Project Logistics</option>
-                        <option>Warehousing</option>
-                      </select>
+                      <div
+                        className="bg-transparent w-full outline-none font-bold italic text-slate-900 uppercase cursor-pointer font-jakarta text-sm md:text-base flex items-center justify-between"
+                        onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                      >
+                        <span>{selectedService}</span>
+                        <ChevronDown className={`w-4 h-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
+                      </div>
+
+                      {isDropdownOpen && (
+                        <div className="absolute top-full left-0 right-0 mt-2 bg-white border border-slate-200 shadow-lg z-50 max-h-48 overflow-y-auto">
+                          {serviceOptions.map((option, index) => (
+                            <div
+                              key={option}
+                              className="px-4 py-3 font-bold italic text-slate-900 uppercase cursor-pointer hover:bg-slate-50 transition-colors font-jakarta text-sm md:text-base border-b border-slate-100 last:border-b-0"
+                              onClick={() => {
+                                setSelectedService(option);
+                                setIsDropdownOpen(false);
+                              }}
+                            >
+                              {option}
+                            </div>
+                          ))}
+                        </div>
+                      )}
                    </div>
                    <div className="border-b border-slate-300 pb-3 md:pb-4 focus-within:border-[#ff8c12] transition-colors">
                       <label className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 block mb-2 md:mb-3">Logistics Requirements</label>
@@ -117,7 +156,7 @@ const Contact: React.FC = () => {
           <div className="w-full max-w-6xl mx-auto">
             <div className="aspect-[16/9] md:aspect-[21/9] bg-white shadow-2xl rounded-lg overflow-hidden border border-slate-200">
               <iframe
-                src="https://maps.google.com/maps?q=9.0054,38.7636&hl=en&z=17&output=embed&iwloc=near&markers=color:red%7Clabel:L%7C9.0054,38.7636"
+                src="https://maps.google.com/maps?q=Bole%20Road%20African%20Ave%20Dembel%20City%20Center%20Addis%20Ababa%20Ethiopia&hl=en&z=17&output=embed&iwloc=near&markers=color:red%7Clabel:L%7C9.0054,38.7636"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -125,7 +164,7 @@ const Contact: React.FC = () => {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="w-full h-full"
-                title="Laguz Logistics Location - Bole Road, Addis Ababa, Ethiopia"
+                title="Laguz Logistics Location - Bole Road, African Ave, Dembel City Center, Addis Ababa, Ethiopia"
               ></iframe>
             </div>
           </div>
@@ -134,8 +173,9 @@ const Contact: React.FC = () => {
             <div className="inline-flex items-center space-x-4 bg-white px-6 py-4 rounded-lg shadow-lg border border-slate-200">
               <div className="text-left">
                 <p className="text-sm font-bold text-slate-500 uppercase tracking-widest">Address</p>
-                <p className="text-slate-900 font-medium">Bole Road, Flamingo, Tommy Tower</p>
-                <p className="text-slate-900 font-medium">4th Floor, Room № 402</p>
+                <p className="text-slate-900 font-medium">Bole Road, African Ave</p>
+                <p className="text-slate-900 font-medium">Dembel City Center, New Building</p>
+                <p className="text-slate-900 font-medium">4th Floor, Office FF-001</p>
                 <p className="text-slate-600 text-sm">Addis Ababa, Ethiopia</p>
               </div>
             </div>

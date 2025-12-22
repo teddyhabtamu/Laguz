@@ -12,7 +12,7 @@ export const chatWithLaguz = async (history: { role: 'user' | 'model', text: str
         Laguz specializes in shipping, logistics, project management, and supply chain solutions.
         Key services: Customs Clearance, Airfreight, Inland Haulage, Multimodal transport, and specialized Project Logistics for Oil & Gas, Mining, and Manufacturing.
         Be professional, helpful, and concise. Always focus on how Laguz can solve the user's logistical challenges.
-        If asked about location: Bole Road, Flamingo, Tommy Tower, 4th Floor, Addis Ababa.`
+        If asked about location: Bole Road, African Ave, Dembel City Center, New Building, 4th Floor, Office FF-001, Addis Ababa, Ethiopia.`
       }
     ];
 
@@ -83,7 +83,7 @@ function getFallbackResponse(message: string): string {
   }
 
   if (lowerMessage.includes('contact') || lowerMessage.includes('location') || lowerMessage.includes('address') || lowerMessage.includes('phone')) {
-    return 'You can reach us at: Bole Road, Flamingo, Tommy Tower, 4th Floor, Addis Ababa, Ethiopia. Feel free to use the contact form on our website for inquiries.';
+    return 'You can reach us at: Bole Road, African Ave, Dembel City Center, New Building, 4th Floor, Office FF-001, Addis Ababa, Ethiopia. Feel free to use the contact form on our website for inquiries.';
   }
 
   if (lowerMessage.includes('price') || lowerMessage.includes('cost') || lowerMessage.includes('quote') || lowerMessage.includes('rate')) {

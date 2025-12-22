@@ -93,8 +93,8 @@ const Footer: React.FC = () => {
               <div className="flex items-start space-x-3 group">
                 <MapPin className="w-4 h-4 text-slate-300 mt-0.5 group-hover:text-[#ff8c12] transition-colors flex-shrink-0" />
                 <p className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-slate-500 leading-relaxed italic">
-                  Bole Road, Flamingo, Tommy Tower,<br />
-                  4th Floor, Room № 402
+                  Bole Road, African Ave, Dembel City Center,<br />
+                  New Building, 4th Floor, Office FF-001
                 </p>
               </div>
               <div className="flex items-start space-x-3 group">
