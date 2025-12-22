@@ -24,7 +24,7 @@ const Home: React.FC = () => {
             <h2 className="text-cyan-600 font-black uppercase tracking-[0.6em] text-[11px] mb-8 font-jakarta drop-shadow-sm">LAGUZ LOGISTICS</h2>
             <h1 className="text-5xl md:text-8xl lg:text-[110px] font-black text-slate-900 leading-[0.9] tracking-tighter uppercase mb-10 font-jakarta">
               STRENGTH <br />
-              <span className="text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.1)]">BEYOND BORDERS</span>
+              <span className="text-gray-300 drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">BEYOND BORDERS</span>
             </h1>
             <p className="text-lg md:text-xl text-slate-800 max-w-2xl mx-auto mb-12 leading-relaxed font-medium bg-white/30 backdrop-blur-sm p-4 rounded-sm inline-block">
               A comprehensive ecosystem of shipping, maritime, and infrastructure services connecting the world to Ethiopia.
